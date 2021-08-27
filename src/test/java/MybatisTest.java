@@ -1,4 +1,5 @@
 import com.mydemo.dao.UserDao;
+import com.mydemo.domain.QueryVo;
 import com.mydemo.domain.User;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
@@ -52,16 +53,85 @@ public class MybatisTest {
         }
     }
 
+    /**
+     * 新增
+     */
     @Test
     public void testSaveUser(){
         User user = new User();
-        user.setUsername("mybatis");
+        user.setUsername("mybatis last insertid");
         user.setAddress("湖北省武汉市");
         user.setSex("男");
         user.setBirthday(new Date());
-
+        System.out.println("保存");
         //执行保存方法
         userDao.saveUser(user);
+    }
 
+    /**
+     * 更新
+     */
+    @Test
+    public void testUpdateUser(){
+        User user = new User();
+        user.setId(52);
+        user.setUsername("mybatis update");
+        user.setAddress("湖北省武汉市");
+        user.setSex("男");
+        user.setBirthday(new Date());
+        //执行保存方法
+        userDao.updateUser(user);
+    }
+
+    /**
+     * 删除
+     */
+    @Test
+    public void deleteUser(){
+        userDao.deleteUser(53);
+    }
+
+    /**
+     * 根据id查用户
+     */
+    @Test
+    public void testFindById(){
+        User user = userDao.findById(52);
+        System.out.println(user);
+    }
+
+    /**
+     * 模糊查询
+     */
+    @Test
+    public void testFindByName(){
+        List<User> users = userDao.findByName("%王%");
+        for (User user : users) {
+            System.out.println(user);
+        }
+    }
+
+    /**
+     * 查询用户数
+     */
+    @Test
+    public void testFindTotal(){
+        int total = userDao.findTotal();
+        System.out.println(total);
+    }
+
+    /**
+     * 通过QueryVo查
+     */
+    @Test
+    public void testFindByVo(){
+        QueryVo queryVo = new QueryVo();
+        User user = new User();
+        user.setUsername("%王%");
+        queryVo.setUser(user);
+        List<User> users = userDao.findByVo(queryVo);
+        for (User user1 : users) {
+            System.out.println(user1);
+        }
     }
 }
