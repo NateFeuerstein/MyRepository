@@ -44,6 +44,9 @@ public class MybatisTest {
         sqlSession.close();
     }
 
+    /**
+     * 查询
+     */
     @Test
     public void testFindAll(){
         //5.使用代理对象执行方法
