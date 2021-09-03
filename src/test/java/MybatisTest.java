@@ -30,7 +30,7 @@ public class MybatisTest {
         SqlSessionFactory factory = builder.build(is);
 
         //3.使用工厂生产SqlSession对象
-        sqlSession = factory.openSession();
+        sqlSession = factory.openSession(true);
 
         //4.使用SqlSession创建Dao接口的代理对象
         userDao = sqlSession.getMapper(UserDao.class);
@@ -39,7 +39,7 @@ public class MybatisTest {
     @After
     public void destory() throws IOException {
         //提交事务
-        sqlSession.commit();
+        //sqlSession.commit();
         is.close();
         sqlSession.close();
     }
