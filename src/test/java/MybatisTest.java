@@ -11,6 +11,7 @@ import org.junit.Test;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -135,6 +136,37 @@ public class MybatisTest {
         List<User> users = userDao.findByVo(queryVo);
         for (User user1 : users) {
             System.out.println(user1);
+        }
+    }
+
+    /**
+     * 根据条件查询
+     */
+    @Test
+    public void testFindByCondition(){
+        User u = new User();
+        u.setUsername("老王");
+        //5.使用代理对象执行方法
+        List<User> users = userDao.findUserByCondition(u);
+        for (User user : users) {
+            System.out.println(user);
+        }
+    }
+
+    /**
+     * 测试foreach标签的使用
+     */
+    @Test
+    public void testFindInIds(){
+        QueryVo queryVo = new QueryVo();
+        List<Integer> list = new ArrayList<Integer>();
+        list.add(41);
+        list.add(42);
+        list.add(45);
+        queryVo.setIds(list);
+        List<User> userInIds = userDao.findUserInIds(queryVo);
+        for (User userInId : userInIds) {
+            System.out.println(userInId);
         }
     }
 }

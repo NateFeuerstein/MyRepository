@@ -55,4 +55,18 @@ public interface UserDao {
      * @param vo
      */
     List<User> findByVo(QueryVo vo);
+
+    /**
+     * 根据传入参数查询
+     * @param user 查询的条件有可能有性别有可能有用户名，地址等等。。
+     * @return
+     */
+    List<User> findUserByCondition(User user);
+
+    /**
+     * 根据ID集合查询
+     * @param Vo
+     * @return
+     */
+    List<User> findUserInIds(QueryVo Vo);
 }

@@ -53,4 +53,12 @@ public class UserDaoImpl implements UserDao {
     public List<User> findByVo(QueryVo vo) {
         return null;
     }
+
+    public List<User> findUserByCondition(User user) {
+        return null;
+    }
+
+    public List<User> findUserInIds(QueryVo Vo) {
+        return null;
+    }
 }

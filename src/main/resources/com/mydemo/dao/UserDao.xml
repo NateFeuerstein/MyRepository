@@ -43,4 +43,34 @@
     <select id="findByVo" parameterType="com.mydemo.domain.QueryVo" resultType="com.mydemo.domain.User">
         select * from user where username like #{user.username}
     </select>
+
+    <!--<select id="findUserByCondition" resultType="com.mydemo.domain.User" parameterType="user">
+        select * from user where 1=1
+        <if test="username != null">
+            and username = #{username}
+        </if>
+    </select>-->
+
+    <select id="findUserByCondition" resultType="com.mydemo.domain.User" parameterType="user">
+        select * from user where
+        <where>
+            <if test="username != null">
+                and username = #{username}
+            </if>
+            <if test="sex != null">
+                and sex = #{sex}
+            </if>
+        </where>
+    </select>
+    
+    <select id="findUserInIds" resultType="com.mydemo.domain.User" parameterType="queryVo">
+        select * from user
+        <where>
+            <if test="ids != null and ids.size()>0">
+                <foreach collection="ids" open="and id in (" close=")" item="id" separator=",">
+                    #{id}
+                </foreach>
+            </if>
+        </where>
+    </select>
 </mapper>
