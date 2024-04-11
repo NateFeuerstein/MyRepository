@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>01_伸缩容器_伸缩项目</title>
+    <style>
+        .out{
+            width: 700px;
+            height: 600px;
+            background-color: aqua;
+            margin: 0 auto;
+            flex-direction: row;
+            /* 调整主轴方向，水平从左到右，默认 */
+            flex-direction: row;
+
+            /* 主轴换行方式，换行 */
+            flex-wrap: wrap;
+
+            /* 主轴的对齐方式，主轴的起始位置 */
+            /* justify-content: flex-start; */
+
+             /* 主轴的对齐方式，主轴的结束位置 */
+             /* justify-content: flex-end; */
+
+             /* 主轴的对齐方式，中间对齐 */
+             /* justify-content: center; */
+
+             /* 主轴的对齐方式，项目均匀的分布在一行中，项目与项目之间的距离，是项目距边缘的二倍 */
+            /* justify-content: space-around; */
+
+             /* 主轴的对齐方式，项目均匀的分布在一行中，项目与项目之间的距离是相等的，项目距边缘没有距离 */
+            /* justify-content: space-between; */
+
+            /* 主轴的对齐方式，项目均匀的分布在一行中 */
+            justify-content: space-evenly;
+
+            
+        }
+        .in{
+            width: 200px;
+            height: 180px;
+            /* margin: 10px 0; */
+            background-color: brown;
+            border: 10px solid black;
+            box-sizing: border-box;
+            /* float: left; */
+        }
+        .inin{
+            width: 50px;
+            height: 50px;
+            background-color: blueviolet;
+            border: 1px solid black;
+            box-sizing: border-box;
+        }
+        .flex{
+            display: flex;
+        }
+    </style>
+</head>
+<body>
+    <div class="out flex">
+        <div class="in">a</div>
+        <div class="in">b</div>
+        <div class="in flex">
+            <div class="inin">
+                1
+            </div>
+            <div class="inin">
+                2
+            </div>
+            <div class="inin">
+                3
+            </div>
+        </div>
+        <div class="in">1</div>
+        <div class="in">2</div>
+        <div class="in">3</div>
+        <div class="in">4</div>
+        <div class="in">5</div>
+        <div class="in">6</div>
+        <div class="in">7</div>
+        <div class="in">8</div>
+    </div>
+
+    
+</body>
+</html>
