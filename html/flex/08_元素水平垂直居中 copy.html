@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>08_元素水平垂直居中</title>
+    <style>
+        .out {
+            width: 400px;
+            height: 400px;
+            background-color: #888;
+            display: flex;
+            /* justify-content: center;
+            align-items: center; */
+
+            /* 方案一 */
+            /* justify-content: center; */
+            /* align-items: center; */
+        }
+        .in {
+            width: 100px;
+            height: 100px;
+            background-color: orange;
+            border: 1px solid red;
+            /* box-sizing: border-box; */
+            /* 方案二 */
+            /* margin: auto; */
+            margin: 200px;
+            /* padding: 20px; */
+        }
+
+        .outer-box {
+        width: 300px;
+        height: 200px;
+        padding: 30px; /* 外部 padding */
+        border: 2px solid black; /* 外部边框 */
+        }
+
+        .inner-wrapper {
+        width: 100%;
+        height: 100%;
+        border: 2px solid red; /* 内部边框 */
+        box-sizing: border-box; /* 让内部边框包含在宽度和高度内 */
+        padding: 20px; /* 内部 padding */
+         }
+
+        .inner-box {
+        width: 100%;
+        height: 100%;
+        border: 2px solid blue; /* 内部边框 */
+        box-sizing: border-box; /* 让内部边框包含在宽度和高度内 */
+        margin: 20px; /* 内部 margin */
+        }
+    </style>
+</head>
+<body>
+    <div class="out">
+        <div class="in">
+            1
+        </div>
+        <div class="in">
+            2
+        </div>
+    </div>
+
+    <div class="outer-box">
+        <div class="inner-wrapper">
+            <div class="inner-box">
+                This is a box with inner margin and padding.
+            </div>
+        </div>
+    </div>
+</body>
+</html>

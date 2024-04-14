@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>1</title>
+    <style>
+        * { 
+            font-family: Arial; 
+            font-size: 14px; 
+            margin: 0; 
+            padding: 0; 
+            border: none; 
+        }
+        a { text-decoration: none; }
+        ul { list-style: none; }
+        html,body {
+            width: 100%;
+            height: 100%;
+        }
+        body {
+            background-image: url('../images/bg.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .page-header {
+            height: 70px;
+            background-color: rgba(0, 0, 0, 0.7);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .header-nav{
+            display: flex;
+        }
+        .header-nav li a{
+            color: white;
+            border: 1px solid white;
+            border-radius: 8px;
+            padding: 10px;
+            margin-right: 20px;
+        }
+
+        .header-nav li:last-child a{
+            margin-right: 0px;
+        }
+
+        .page-content{
+            /* height: 700px; */
+            /* 只能控制行内元素和行内快元素  */
+            /* line-height: 700px; */
+            display: flex;
+            height: calc(100vh - 70px);
+        }
+
+        .content-nav{
+            width: 1000px;
+            height: 300px;
+            background-color: aqua;
+            margin: auto;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+
+        .content-nav .item{
+            width: 180px;
+            height: 200px;
+            background-color: rgb(85, 151, 132);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-evenly;
+            /* 无效 因为全局已经设置了大小 */
+            /* font-size: 20px; */
+
+            /* 动画 */
+            transition: 0.2s linear;
+            cursor: pointer;
+        }
+
+        .content-nav .item:hover {
+            box-shadow: 0px 0px 20px black;
+        }
+
+        .content-nav .item span{
+            
+            font-size: 20px;
+            color: white;
+        }
+
+        .content-nav .item:nth-child(1) {
+            background-color:#595CA8;
+        }
+        .content-nav .item:nth-child(2) {
+            background-color:#FF9D2E;
+        }
+        .content-nav .item:nth-child(3) {
+            background-color:#01A6DE;
+        }
+        .content-nav .item:nth-child(4) {
+            background-color:#015E91;
+        }
+        .content-nav .item:nth-child(5) {
+            background-color:#1DC128;
+        }
+        
+
+        
+    </style>
+</head>
+<body>
+    <!-- 头部 -->
+    <header class="page-header">
+        <a href="" class="">
+            <img src="../images/logo.png" alt="logo" class="">
+            
+        </a>
+        <ul class="header-nav">
+            <li class="">
+                <a href="" class="">
+                    国内校区
+                </a></li>
+            <li class=""><a href="" class="">
+                缅甸校区 
+                </a></li>
+            <li class=""><a href="" class="">
+                非洲校区        
+            </a></li>
+            <li class="">
+                <a href="" class="">
+                美国校区      
+            </a></li>
+        </ul>
+        
+        
+    </header>
+    <!-- 内容区 -->
+    <div class="page-content">
+        <div class="content-nav">
+            <div class="item">
+                <img src="../images/item1.png" alt="">
+                <span>我的邮箱</span>
+            </div>
+            <div class="item">2</div>
+            <div class="item">3</div>
+            <div class="item">4</div>
+            <div class="item">5</div>
+        </div>
+    </div>
+    
+</body>
+</html>
